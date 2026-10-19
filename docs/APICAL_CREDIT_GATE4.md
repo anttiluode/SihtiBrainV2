@@ -2,7 +2,7 @@
 
 This gate takes [SihtiBrainV2's first two-window experiment](../README.md) one step further: the earlier experiment **writes a cable operator** without targets; this one tests whether an *externally informed later cortical window* can train a basal readout through a state-shaped returning ping.
 
-![Gate 4 held-out learning and controls](../runs/apical_credit/apical_credit.png)
+The six-panel figure is produced by the demo and uploaded as a GitHub Actions artifact (generated files are intentionally git-ignored).
 
 The figure is generated locally/under GitHub Actions via `python demo_apical_credit.py`. Generated runs are intentionally git-ignored; download the CI artifact or run the script.
 
