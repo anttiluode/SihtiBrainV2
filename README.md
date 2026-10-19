@@ -97,7 +97,7 @@ With **the same nine-compartment cable, fixed nonlinear branch features, supervi
 
 The mathematical reason is instructive: this toy's calcium proxy is separable, so taking a calcium ratio **cancels the local-voltage factor** and retains only a nonlinear representation of the globally shaped feedback event. The branch-specific update comes from the eligibility trace, not new information in the ratio. This is a negative result for the *extra two-ping algorithm*, not for V2's persistent operator-memory experiment. The next V2 question should be write selectivity and interference in conductance memory.
 
-Run: \`python gate5_stopping_test.py --output runs/gate5_stopping_test\`. The GitHub CI artifacts contain the four-panel figure and complete per-seed receipts.
+Run: `python gate5_stopping_test.py --output runs/gate5_stopping_test`. The GitHub CI artifacts contain the four-panel figure and complete per-seed receipts.
 
 
 ## What this adds, and what it does not
