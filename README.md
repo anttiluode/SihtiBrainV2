@@ -1,5 +1,7 @@
 # SihtiBrainV2 — A dendrite keeps what the soma cannot see
 
+Part of monday madness - 8 repos mostly consolidated to Sihtibrain. 
+
 **Basal evidence → branch-local cable gradients → somatic compression → state-shaped ping → delayed apical gate → response echo → optional persistent conductance write.**
 
 SihtiBrainV2 tests a precise version of the Sihti Light intuition: a dendrite does not simply discard detail. Some distinctions remain locally in voltage gradients and can later be interrogated. A returning somatic event interacts with that local state and a delayed apical signal, possibly changing both what is visible and how the circuit responds in the future.
