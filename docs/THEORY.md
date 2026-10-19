@@ -47,3 +47,17 @@ V2 tests options 2 and 3 while explicitly supplying the additional apical contex
 - Measure the rank/singular values of the effective input-to-soma observability Jacobian before and after a ping, to find whether context really increases access to hidden distinctions.
 
 **Research question:** can a local feedback event make distributed information selectively readable and writable under strict, causal information constraints, without inserting a teacher-signed error or an oracle context channel?
+
+## The deeper mathematical readout: the spectrum of a disturbance
+
+For the soma's unit probe `e_s`, the frozen-cable probe susceptibility is
+
+    χ(W) = e_sᵀ H(W)⁻¹ e_s.
+
+For a reciprocal edge with incidence vector `b_e`, `H(W)=H_0+Σ_e W_e b_e b_eᵀ`. Differentiating the inverse gives an **exact** identity:
+
+    ∂χ/∂W_e = −(b_eᵀ H(W)⁻¹ e_s)².
+
+The response of the soma to a ping is thus sensitive to the geometry of individual cables, but the sensitivity depends on how strongly the soma's probe reaches each edge. This is the small-circuit form of the InformationalSpectra question: *what modes are observable through this measurement port?* With a fixed operator, soma-null modes remain hidden. Contextual operator changes can mix hidden and visible modes across time windows. This identity is passive linear algebra; the speculative ingredient is whether biological dendrites exploit sufficiently selective, causal conductance modulation.
+
+In the code, `ping_sensitivity_to_cables` implements this identity. The circuit is still too small to infer a neural spectral law or claims about consciousness.
