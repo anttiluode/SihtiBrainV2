@@ -24,7 +24,11 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Reproduce plots and JSON
         run: python demo.py --output runs/first_echo
+      - name: Reproduce apical learning and Gate 4 figure
+        run: python demo_apical_credit.py --output runs/apical_credit --epochs 35
       - uses: actions/upload-artifact@v4
         with:
           name: sihtibrainv2-results-py${{ matrix.python-version }}
-          path: runs/first_echo/
+          path: |
+            runs/first_echo/
+            runs/apical_credit/

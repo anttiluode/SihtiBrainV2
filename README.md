@@ -73,6 +73,21 @@ There are 19 deterministic tests of mathematical invariants and negative control
 
 The apical input can be supplied manually to isolate the mechanism or generated from **another column's previous-window voltages** by `context_from_neighbor`. Both compared inputs receive the **same** previous-neighbor context. The current soma does not somehow decode information it never observed.
 
+
+## Gate 4: later apical evidence trains the basal readout through a returning ping
+
+[Full protocol, results, and limitations](docs/APICAL_CREDIT_GATE4.md).
+
+On the same nine-compartment cable, a **later supervised teaching current enters only at the tuft**, changes the soma's shaped outgoing ping, and reaches basal plastic readout sites as a **fractional two-ping calcium change** multiplied by local eligibility. No target or scalar error is supplied directly to basal synapses; the apical channel still explicitly carries target-minus-prediction information.
+
+Across four random seeds on held-out amplitude-jittered same-branch-versus-split examples, the returning-ping condition reaches **100% accuracy in all four**. No-ping, shuffled-context, disconnected-trunk, erased-eligibility, and expired-eligibility controls remain at the 66.7% majority-class floor. Importantly, **ordinary direct-gradient learning also reaches 100%**; fixed nonlinear branch features were selected in advance, not discovered.
+
+```bash
+python demo_apical_credit.py --output runs/apical_credit
+```
+
+The script reproduces a six-panel figure and JSON metrics; CI uploads both. This is an abstract two-window feedback/learning gate, **not** a biophysical simulation of tuft plateaus, autonomous axonal spikes, or temporal synaptic calcium traces.
+
 ## What this adds, and what it does not
 
 Unlike [SihtiBrain](https://github.com/anttiluode/SihtiBrain), which studies passive cables, branch nonlinearities, supervised EqProp nudges and bistable kicks, V2 deliberately studies a **two-window unsupervised read/write loop**. It does not modify the first repo.
