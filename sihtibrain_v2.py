@@ -211,3 +211,15 @@ def live_loop(encoded, apical=(1., 0.), ping_base=1., pulse_start=35,
     return dict(voltage=np.stack(vs), slow_g=np.stack(slow_history),
                 fast_g=np.stack(fast_history), gate=np.stack(gates),
                 ping_current=somatic_current)
+
+
+def ping_sensitivity_to_cables(root_conductance=(.8, .8)):
+    """Exact derivative of soma ping susceptibility with respect to edge W.
+
+    chi(W) = e_s^T H(W)^(-1) e_s
+    d chi / d W_edge = -(b_edge^T H(W)^(-1) e_s)^2.
+    """
+    unit = np.zeros(N)
+    unit[SOMA] = 1.
+    response = np.linalg.solve(operator(root_conductance), unit)
+    return np.array([-(response[SOMA] - response[i])**2 for i in ROOTS])
