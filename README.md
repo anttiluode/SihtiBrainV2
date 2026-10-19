@@ -88,6 +88,18 @@ python demo_apical_credit.py --output runs/apical_credit
 
 The script reproduces a six-panel figure and JSON metrics; CI uploads both. This is an abstract two-window feedback/learning gate, **not** a biophysical simulation of tuft plateaus, autonomous axonal spikes, or temporal synaptic calcium traces.
 
+
+## Gate 5: stopping test — no two-ping advantage over simpler three-factor learning
+
+[Protocol registered before the experiment](docs/GATE5_PREREGISTRATION.md) · [Results and interpretation](docs/GATE5_RESULT.md).
+
+With **the same nine-compartment cable, fixed nonlinear branch features, supervised apical teaching signal, and six independent training seeds**, all active rules reached 100% in-distribution held-out balanced accuracy. Under three shifted domains at 3% calcium read noise, the two-ping log-ratio averaged **62.13%** balanced accuracy, while a simpler graded outgoing-event rule averaged **62.21%**; the event rule had lower binary cross entropy (2.664 vs. 3.028). A same-noisy-calcium fractional-change rule nearly matched the log ratio (62.04%). **Gate 5 did not pass its precommitted distinctive-advantage criterion.**
+
+The mathematical reason is instructive: this toy's calcium proxy is separable, so taking a calcium ratio **cancels the local-voltage factor** and retains only a nonlinear representation of the globally shaped feedback event. The branch-specific update comes from the eligibility trace, not new information in the ratio. This is a negative result for the *extra two-ping algorithm*, not for V2's persistent operator-memory experiment. The next V2 question should be write selectivity and interference in conductance memory.
+
+Run: \`python gate5_stopping_test.py --output runs/gate5_stopping_test\`. The GitHub CI artifacts contain the four-panel figure and complete per-seed receipts.
+
+
 ## What this adds, and what it does not
 
 Unlike [SihtiBrain](https://github.com/anttiluode/SihtiBrain), which studies passive cables, branch nonlinearities, supervised EqProp nudges and bistable kicks, V2 deliberately studies a **two-window unsupervised read/write loop**. It does not modify the first repo.
