@@ -69,7 +69,7 @@ This is an activity-dependent unsupervised write, **not** a supervised error gra
 | Post-reset read after delayed time-stepped write | −0.00897 |
 | Time-stepped post-reset read, frozen writer | 0 |
 
-There are 18 deterministic tests of mathematical invariants and negative controls. **These results establish what this constructed circuit does under its chosen parameters, not that biological cortical columns work this way.** The phenomenological gate is designed, not learned. It has not been benchmarked on unseen object categories, sequences, or real recordings.
+There are 19 deterministic tests of mathematical invariants and negative controls. **These results establish what this constructed circuit does under its chosen parameters, not that biological cortical columns work this way.** The phenomenological gate is designed, not learned. It has not been benchmarked on unseen object categories, sequences, or real recordings.
 
 The apical input can be supplied manually to isolate the mechanism or generated from **another column's previous-window voltages** by `context_from_neighbor`. Both compared inputs receive the **same** previous-neighbor context. The current soma does not somehow decode information it never observed.
 
